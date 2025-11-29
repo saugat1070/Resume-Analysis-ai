@@ -68,7 +68,8 @@ export const LoginRequest = async (req,res)=>{
     SendMail({email:email,subject:"Verify Login User",html:htmlContent});
     // res.redirect(verifyLink);
     return res.status(200).json({
-        messsage : "Please check your email to verify you login"
+        messsage : "Please check your email to verify you login",
+        token : token
     });
 };
 
@@ -94,6 +95,7 @@ export const SignOut = async (req,res)=>{
 };
 
 export const Profile = async (req,res)=>{
+    console.log(req.user)
     const {_id : userId} = req.user;
     const user = await User.findById(userId).populate("-password");
     if(!user){
