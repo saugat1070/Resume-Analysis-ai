@@ -3,7 +3,6 @@ import cors from "cors";
 import { envConfig } from "./Config/envConfig.js";
 import { connectDb } from "./Config/dbConnect.js";
 import "./utils/passport.js";
-import passport from "passport";
 import cookieParser from "cookie-parser";
 import { authRouter } from "./Routes/auth.route.js";
 
