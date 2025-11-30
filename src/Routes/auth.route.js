@@ -25,4 +25,3 @@ authRouter.route("/login").post(ErrorHandler(LoginRequest))
 
 export {authRouter};
 
-//FIXME: i have to fix issue related between email verification token and jwt
