@@ -43,6 +43,7 @@ export const SignUp = async (req, res) => {
   });
 };
 
+//TODO: i have to remove token from database after certain minutes
 export const LoginRequest = async (req, res) => {
   const { email, password } = req.body;
   if (!email || !password) {
@@ -180,20 +181,18 @@ export const ForgetPassword = async (req, res) => {
 export const updateProfile = async (req, res) => {
   const user = req.user;
   let result;
-  console.log(req?.file)
   if (req.file) {
     result = await cloudinary.uploader.upload(req?.file?.path, {
       folder: "ats-profile-picture",
     }).catch((err)=>console.log(err));
-    console.log(result)
     await User.findOneAndUpdate(
       { _id: user?._id },
       { $set: { avatarUrl: result?.secure_url } }
     );
   }
-  await fs.unlink(req?.file?.path).catch((err)=>console.log(`Error while deleting avatar:${err?.message}`));
-  const { age, educationLevel, gender, skils, interest, experience } = req.body;
-
+  if(result) await fs.unlink(req?.file?.path).catch((err)=>console.log(`Error while deleting avatar:${err?.message}`));
+  const { age, educationLevel, gender, skills, interest, experience } = req.body;
+//TODO: here handle array of objects in experience
   const profileInformation = await Profile.findOneAndUpdate(
     { userId: user?._id },
     {
@@ -201,9 +200,9 @@ export const updateProfile = async (req, res) => {
         age: age,
         educationLevel: educationLevel,
         gender: gender,
-        skills: skils,
-        interest: interest,
+        interest: {$each:interest},
         experience: experience,
+        skills:{$each:skills}
       },
     },
     { new: true, upsert: true }

@@ -11,5 +11,8 @@ export const envConfig = {
     googleSecretClient: process.env.GOOGLE_SECRET_CLIENT_KEY,
     jwtSecretToken: process.env.JWT_SECRET_TOKEN,
     emailUser:process.env.EMAIL_USER,
-    emailPassword: process.env.EMAIL_NODEMAILER_PASSWORD
+    emailPassword: process.env.EMAIL_NODEMAILER_PASSWORD,
+    cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+    cloudSecret: process.env.CLOUDINARY_API_SECRET,
+    cloudKey: process.env.CLOUDINARY_API_KEY
 }
