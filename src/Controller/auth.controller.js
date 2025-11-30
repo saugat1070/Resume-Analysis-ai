@@ -79,11 +79,13 @@ export const loginVerify = async (req,res)=>{
     if(!tokenResponse){
         return res.status(401).json({message:"verification failed"});
     }
-    const userInfo = await User.find({email:tokenResponse?.email}).select("-password");
+    
+    const userInfo = await User.findOne({email:tokenResponse?.email}).select("-password");
+    console.log(userInfo)
     generateToken(userInfo,res);
     return res.status(200).json({
         message:"User signed in successfully",
-        user:userInfo
+        user:userInfo?.user
         });
 }
 
@@ -95,14 +97,7 @@ export const SignOut = async (req,res)=>{
 };
 
 export const Profile = async (req,res)=>{
-    console.log(req.user)
-    const {_id : userId} = req.user;
-    const user = await User.findById(userId).populate("-password");
-    if(!user){
-        return res.status(404).json({
-            message:"User not found"
-        });
-    }
+    const user = req.user;
     return res.status(200).json({
         message:"User profile fetched successfully",
         user
