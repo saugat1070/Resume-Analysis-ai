@@ -1,0 +1,118 @@
+{
+  "personalInfo": {
+    "name": "Saugat Giri",
+    "email": "saugatgiri1070@gmail.com",
+    "phone": "+977-9804386059",
+    "location": "Lamachaur, Pokhara",
+    "linkedin": "saugatgiri",
+    "portfolio": "saugatgiri1070.com.np"
+  },
+  "summary": "Motivated and detail-oriented backend developer with hands-on experience in Node.js and Django. Strong command over RESTful API development, JWT-based auth, payment gateways, and database systems. Currently studying B.E. in Electronics and Communication Engineering at Pashchimanchal Campus and actively mentoring students, contributing to technical clubs, and building scalable real-world applications.",
+  "experience": [
+    {
+      "company": "Pashchimanchal Campus (WRC), IOE, Tribhuwan University",
+      "position": "Coordinator – Free Website for WRC Program (COTS)",
+      "startDate": "2025",
+      "endDate": "Present",
+      "description": "Initiated and led a campus-wide program to provide free websites and backend support to all technical student clubs. Managed end-to-end workflow including requirements gathering, domain setup, content planning, and deployment. Mentored junior members in HTML/CSS, hosting, and backend integration. Ensured timely maintenance and technical support for club websites.",
+      "achievements": [
+        "Delivered functional websites for multiple student clubs within the first semester",
+        "Trained 15+ junior developers on basic web development practices",
+        "Reduced website downtime by implementing automated monitoring scripts"
+      ]
+    },
+    {
+      "company": "Pashchimanchal Campus (WRC), IOE, Tribhuwan University",
+      "position": "Executive Member – Club of Technical Students (COTS)",
+      "startDate": "2025",
+      "endDate": "Present",
+      "description": "Contributed to planning and executing technical events, bootcamps, and workshops across backend development, robotics, and AI. Managed club members by assigning roles based on skills, ensuring efficient task distribution and collaboration. Promoted cross‑club collaboration and built bridges with external communities.",
+      "achievements": [
+        "Organized 5+ workshops with an average attendance of 80 participants",
+        "Coordinated a robotics competition involving 12 teams",
+        "Facilitated partnerships with local tech startups for mentorship programs"
+      ]
+    },
+    {
+      "company": "TechParva 2.0 (ICES, WRC)",
+      "position": "Volunteer",
+      "startDate": "2024-12",
+      "endDate": "2024-12",
+      "description": "Assisted in organizing a 3‑day tech festival attended by over 1000 participants. Handled technical logistics such as sound systems, projector setups, and internet access. Provided live backend support for events including Datathon and coding competitions.",
+      "achievements": [
+        "Ensured 100% uptime of event Wi‑Fi and streaming services",
+        "Supported real‑time scoring system for coding competitions"
+      ]
+    },
+    {
+      "company": "Self‑initiated",
+      "position": "Mentor – Mastering Backend Development",
+      "startDate": "2025-07",
+      "endDate": "Present",
+      "description": "Mentored more than 100 students in backend web development using Node.js, Express, and MongoDB. Conducted live sessions on REST APIs, middleware design, error handling, and JWT authentication. Provided feedback and code reviews to optimize student projects.",
+      "achievements": [
+        "Guided 30+ students to complete capstone projects deployed to cloud platforms",
+        "Received positive feedback rating of 4.8/5 from mentees"
+      ]
+    },
+    {
+      "company": "WordCamp Pokhara 2025",
+      "position": "Participant",
+      "startDate": "2025-07",
+      "endDate": "2025-07",
+      "description": "Participated in workshops and networking sessions focused on WordPress development, plugin creation, and open‑source CMS architecture.",
+      "achievements": []
+    }
+  ],
+  "education": [
+    {
+      "institution": "Pashchimanchal Campus (WRC), IOE, Tribhuwan University",
+      "degree": "Bachelor",
+      "field": "Electronics and Communication Engineering",
+      "graduationDate": "",
+      "gpa": ""
+    }
+  ],
+  "skills": {
+    "technical": [
+      "REST APIs",
+      "Git",
+      "Multer",
+      "Nodemailer",
+      "AWS cloud",
+      "Machine Learning",
+      "JWT",
+      "OAuth"
+    ],
+    "soft": [],
+    "languages": ["JavaScript", "TypeScript", "Python", "C", "C++"],
+    "frameworks": ["Node.js", "Express", "Django", "React"]
+  },
+  "projects": [
+    {
+      "name": "Mero Doctor",
+      "description": "Scalable hospital management system with role‑based access (Admin, Doctor, User) using secure JWT authentication. Features full profile management, document uploads via Multer, OTP/email verification, appointment booking with history tracking, payment integration with Esewa and Khalti, and automated mailing with Nodemailer.",
+      "technologies": [
+        "Node.js",
+        "Express",
+        "TypeScript",
+        "PostgreSQL",
+        "Multer"
+      ],
+      "url": "https://github.com/saugat1070/MeroDoctor"
+    },
+    {
+      "name": "Hamro Dokan (Digital Pasal)",
+      "description": "Full‑featured e‑commerce backend providing user/admin authentication, CRUD APIs for products, categories, carts, and orders. Includes image/document upload, email‑based OTP verification, JWT secured sessions, and payment processing via Esewa and Khalti. Designed with MVC and service‑based modular architecture for maintainability.",
+      "technologies": ["Node.js", "Express", "PostgreSQL", "Multer"],
+      "url": "https://github.com/saugat1070/DigitalPasal"
+    },
+    {
+      "name": "Email Spam Detection System",
+      "description": "Web‑based machine learning application that detects spam emails using TF‑IDF vectorization and a Naive Bayes classifier. Deployed with Flask, featuring a minimal responsive front‑end for users to test emails and receive instant predictions.",
+      "technologies": ["Python", "Flask", "Scikit-learn", "HTML/CSS"],
+      "url": ""
+    }
+  ],
+  "certifications": []
+}
