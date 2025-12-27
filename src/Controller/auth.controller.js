@@ -58,12 +58,13 @@ export const LoginRequest = async (req, res) => {
     });
   }
   const isPasswordValid = bcrypt.compareSync(password, existingUser.password);
+  
   if (!isPasswordValid) {
     return res.status(401).json({
       message: "Invalid password",
     });
   }
-
+  generateToken({_id:existingUser._id},res);
   let token = crypto.randomBytes(64).toString("hex");
   await LoginVerify.create({
     email,
