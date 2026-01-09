@@ -56,6 +56,7 @@ export const LoginRequest = async (req, res) => {
     });
   }
   const isPasswordValid = bcrypt.compareSync(password, existingUser.password);
+  
   if (!isPasswordValid) {
     return res.status(401).json({
       message: "Invalid password",

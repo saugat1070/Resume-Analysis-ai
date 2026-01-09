@@ -1,14 +1,34 @@
-import multer,{diskStorage} from "multer";
-
+import multer from "multer";
+const memoryStorage = multer.memoryStorage()
 const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, './src/uploads')
+  destination(req, file, cb) {
+    cb(null, "./src/uploads");
   },
-  filename: function (req, file, cb) {
-    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-    cb(null, file.fieldname + '-' + uniqueSuffix)
-  }
-})
+  filename(req, file, cb) {
+    const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
+    cb(null, file.fieldname + "-" + uniqueSuffix);
+  },
+});
 
-const upload = multer({ storage: storage });
-export default upload;
+export const uploadCv = multer({
+  memoryStorage,
+  limits: { fileSize: 10 * 1024 * 1024 },
+  fileFilter(req, file, cb) {
+    if (file.mimetype !== "application/pdf") {
+      return cb(new Error("Only PDF files are allowed"), false);
+    }
+    cb(null, true);
+  },
+});
+
+//TODO: I have to fix file mimetype properly
+export const uploadImage = multer({
+  storage,
+  limits: { fileSize: 10 * 1024 * 1024 },
+  fileFilter(req, file, cb) {
+    if (file.mimetype !== "img/*") {
+      return cb(new Error("Only image  are allowed"), false);
+    }
+    cb(null, true);
+  },
+});
